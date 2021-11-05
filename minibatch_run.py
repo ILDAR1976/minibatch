@@ -1,7 +1,8 @@
 import sys
-sys.path.insert(0, 'F:\\projects\\python\\DeepLearning\\FDL')
+#Here you need to specify the path to the folder where the project folder is located
+sys.path.insert(0, 'F:\\projects\\python\\DeepLearning\\DeepLearningIha')
 
-from fdl_examples.datatools import input_data
+from minibatch.datatools import input_data
 mnist = input_data.read_data_sets("data/", one_hot=True)
 
 import tensorflow.compat.v1 as tf
@@ -24,4 +25,4 @@ if __name__ == '__main__':
     sess.run(init_op)
     feed_dict_source = {x: get_minibatch()}
     res = sess.run(output,feed_dict=feed_dict_source)
-    #print(res)
+    print(res)
